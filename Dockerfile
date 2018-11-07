@@ -290,8 +290,8 @@ RUN chmod 777 -R /usr/local/ensembl-vep-release-94 \
     && ln -s /usr/local/ensembl-vep-release-94/haplo /usr/local/bin \
     && ln -s /usr/local/ensembl-vep-release-94/filter_vep /usr/local/bin \
     && ln -s /usr/local/ensembl-vep-release-94/cpanfile /usr/local/bin \
-    && ln -s /usr/local/ensembl-vep-release-94/convert_cache.pl /usr/local/bin \
-    && ./INSTALL.pl -a a -l; exit 0
+    && ln -s /usr/local/ensembl-vep-release-94/convert_cache.pl /usr/local/bin #\
+#    && ./INSTALL.pl -a a -l; exit 0
 
 ## Create user training
 ########
