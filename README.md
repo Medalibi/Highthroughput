@@ -19,6 +19,6 @@ docker exec -it highthroughput /bin/bash
 ## To build the container:
 ```
 docker build -f ./Dockerfile -t highthroughput .
-docker tag metagenomics ebitraining/highthroughput:latest
+docker tag highthroughput ebitraining/highthroughput:latest
 docker push ebitraining/highthroughput:latest
 ```
