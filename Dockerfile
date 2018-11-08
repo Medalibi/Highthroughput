@@ -295,7 +295,7 @@ RUN chmod 777 -R /usr/local/ensembl-vep-release-94 \
 
 # Setup the user envirenment
 ########
-RUN useradd -r -s /bin/bash -U -m -d /home/training -p '' training
+RUN useradd -r -s /bin/bash -U -m -d /home/training -p '' training \
     && usermod -aG sudo,audio,video training \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
     
