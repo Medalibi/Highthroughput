@@ -300,8 +300,7 @@ RUN useradd -r -s /bin/bash -U -m -d /home/training -p '' training
 # Setup the user envirenment
 ########
 ENV HOME /home/training
-RUN chown -R training:training $HOME \
-    && usermod -aG sudo,audio,video training \
+RUN usermod -aG sudo,audio,video training \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 WORKDIR $HOME
