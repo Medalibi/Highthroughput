@@ -293,15 +293,12 @@ RUN chmod 777 -R /usr/local/ensembl-vep-release-94 \
     && ln -s /usr/local/ensembl-vep-release-94/convert_cache.pl /usr/local/bin #\
 #    && ./INSTALL.pl -a a -l; exit 0
 
-## Create user training
-########
-RUN useradd -r -s /bin/bash -U -m -d /home/training -p '' training
-
 # Setup the user envirenment
 ########
-ENV HOME /home/training
-RUN usermod -aG sudo,audio,video training \
+RUN useradd -r -s /bin/bash -U -m -d /home/training -p '' training
+    && usermod -aG sudo,audio,video training \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
+    
+ENV HOME /home/training
 WORKDIR $HOME
 USER training
